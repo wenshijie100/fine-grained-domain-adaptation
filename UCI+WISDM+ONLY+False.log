@@ -1,0 +1,10 @@
+only 2 UCI WISDM ONLY/ONLY.yaml False
+Namespace(backbone='resnet50', batch_size=32, config='ONLY/ONLY.yaml', data_dir='data', device=device(type='cuda'), early_stop=50, epoch_based_training=False, lr=0.003, lr_decay=0.75, lr_gamma=0.0003, lr_scheduler=True, method='False', momentum=0.9, myweight=0.1, n_epoch=200, n_iter_per_epoch=100, num_workers=3, seed=2, src_domain='UCI', tgt_domain='WISDM', tname='transfer', transfer_loss='only', transfer_loss_weight=0.5, use_bottleneck=True, weight_decay=0.0005)
+JUST DO IT
+run my Parkinson code
+transfer
+TRAIN Length: 3369 615 TEST Length: 13609 322
+YYY: 0 3
+DATA_PROFILE   train: 3369 train2: 13609 test: 13609
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7f5e207a1fd0> True
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7f5e2864c080> True

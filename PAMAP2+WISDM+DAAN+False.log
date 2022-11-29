@@ -1,0 +1,81 @@
+daan 2 PAMAP2 WISDM DAAN/DAAN.yaml False
+Namespace(backbone='resnet50', batch_size=32, config='DAAN/DAAN.yaml', data_dir='data', device=device(type='cuda'), early_stop=50, epoch_based_training=False, lr=0.003, lr_decay=0.75, lr_gamma=0.0003, lr_scheduler=True, method='False', momentum=0.9, myweight=0.1, n_epoch=200, n_iter_per_epoch=100, num_workers=3, seed=2, src_domain='PAMAP2', tgt_domain='WISDM', tname='transfer', transfer_loss='daan', transfer_loss_weight=0.5, use_bottleneck=True, weight_decay=0.0005)
+JUST DO IT
+run my Parkinson code
+transfer
+TRAIN Length: 4725 360 TEST Length: 13609 322
+YYY: 0 3
+DATA_PROFILE   train: 4725 train2: 13609 test: 13609
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7f99a8468ef0> True
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7f99a8489860> True
+DATASET.SHAPE: <data_loader.GetTestLoader object at 0x7f99a04952b0> False
+CLASS: 4 322
+LLL: {}
+BOTTLENECK_LIST: [Linear(in_features=512, out_features=256, bias=True), ReLU()]
+TYPE: {'loss_type': 'daan', 'max_iter': 29400, 'num_class': 4, 'my_person_item': <my_person_item.PersonItem object at 0x7f9a61e4d438>}
+initial_lr 1.0
+transfer_world
+method False <class 'str'>
+1.10.1+cu102
+True
+LEN: 0 0
+LOADER: <data_loader.InfiniteDataLoader object at 0x7f99a8942518> <data_loader.InfiniteDataLoader object at 0x7f99a04951d0>
+N_batch: 147
+trian begin
+trian end
+n_person 322
+SAMPLE
+F1_MI: 0.6148872069953707 F1_MA: 0.5825741261430125 ACC_MI: 0.6148872069953707 F1_MA: 0.5710809885077969
+BEST_F1_MI: 0.6148872069953707 BEST_F1_MA: 0.5825741261430125 BEST_ACC_MI: 0.6148872069953707 BEST_F1_MA: 0.5710809885077969
+[[5801 1905  538   14]
+ [ 939  908  346  148]
+ [ 658  662  554   27]
+ [   0    4    0 1105]]
+Epoch: [ 1/200], cls_loss: 0.7254, transfer_loss: 0.0179,person_loss: 0.0000, total_Loss: 0.7343
+trian begin
+trian end
+n_person 322
+SAMPLE
+F1_MI: 0.6619149092512308 F1_MA: 0.6075284185540099 ACC_MI: 0.6619149092512308 F1_MA: 0.5941553884581533
+BEST_F1_MI: 0.6619149092512308 BEST_F1_MA: 0.6075284185540099 BEST_ACC_MI: 0.6619149092512308 BEST_F1_MA: 0.5941553884581533
+[[6391 1249  610    8]
+ [ 875  809  523  134]
+ [ 771  406  702   22]
+ [   2    1    0 1106]]
+Epoch: [ 2/200], cls_loss: 0.4543, transfer_loss: 0.0155,person_loss: 0.0000, total_Loss: 0.4621
+trian begin
+trian end
+n_person 322
+SAMPLE
+F1_MI: 0.49026379601734155 F1_MA: 0.5577205240587982 ACC_MI: 0.4902637960173415 F1_MA: 0.5565332365964176
+BEST_F1_MI: 0.6619149092512308 BEST_F1_MA: 0.6075284185540099 BEST_ACC_MI: 0.6619149092512308 BEST_F1_MA: 0.5941553884581533
+[[3870 3604  776    8]
+ [ 548 1227  511   55]
+ [ 385 1041  472    3]
+ [   0    4    2 1103]]
+Epoch: [ 3/200], cls_loss: 0.4221, transfer_loss: 0.0171,person_loss: 0.0000, total_Loss: 0.4306
+trian begin
+trian end
+n_person 322
+SAMPLE
+F1_MI: 0.3070027187890367 F1_MA: 0.47316265296268095 ACC_MI: 0.3070027187890367 F1_MA: 0.43609848175074933
+BEST_F1_MI: 0.6619149092512308 BEST_F1_MA: 0.6075284185540099 BEST_ACC_MI: 0.6619149092512308 BEST_F1_MA: 0.5941553884581533
+[[1091 4386 1835  946]
+ [ 108 1046  741  446]
+ [  27  809  934  131]
+ [   0    1    1 1107]]
+Epoch: [ 4/200], cls_loss: 0.3730, transfer_loss: 0.0177,person_loss: 0.0000, total_Loss: 0.3818
+trian begin
+trian end
+n_person 322
+SAMPLE
+F1_MI: 0.5629362921596003 F1_MA: 0.5228022125069831 ACC_MI: 0.5629362921596003 F1_MA: 0.4675711923524737
+BEST_F1_MI: 0.6619149092512308 BEST_F1_MA: 0.6075284185540099 BEST_ACC_MI: 0.6619149092512308 BEST_F1_MA: 0.5941553884581533
+[[4984 1098 1109 1067]
+ [ 550  577  804  410]
+ [ 449  337  991  124]
+ [   0    0    0 1109]]
+Epoch: [ 5/200], cls_loss: 0.3367, transfer_loss: 0.0180,person_loss: 0.0000, total_Loss: 0.3457
+trian begin
+trian end
+n_person 322

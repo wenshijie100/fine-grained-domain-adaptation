@@ -1,0 +1,103 @@
+coral 2 PAMAP2 WISDM DeepCoral/DeepCoral.yaml False
+Namespace(backbone='resnet50', batch_size=32, config='DeepCoral/DeepCoral.yaml', data_dir='data', device=device(type='cuda'), early_stop=50, epoch_based_training=False, lr=0.003, lr_decay=0.75, lr_gamma=0.0003, lr_scheduler=True, method='False', momentum=0.9, myweight=0.1, n_epoch=200, n_iter_per_epoch=100, num_workers=3, seed=2, src_domain='PAMAP2', tgt_domain='WISDM', tname='transfer', transfer_loss='coral', transfer_loss_weight=10.0, use_bottleneck=True, weight_decay=0.0005)
+JUST DO IT
+run my Parkinson code
+transfer
+TRAIN Length: 4725 360 TEST Length: 13609 322
+YYY: 0 3
+DATA_PROFILE   train: 4725 train2: 13609 test: 13609
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7fb2e571eef0> True
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7fb2e573b860> True
+DATASET.SHAPE: <data_loader.GetTestLoader object at 0x7fb2dd6c82b0> False
+CLASS: 4 322
+LLL: {}
+BOTTLENECK_LIST: [Linear(in_features=512, out_features=256, bias=True), ReLU()]
+TYPE: {'loss_type': 'coral', 'max_iter': 29400, 'num_class': 4, 'my_person_item': <my_person_item.PersonItem object at 0x7fb39d389438>}
+initial_lr 1.0
+transfer_world
+method False <class 'str'>
+1.10.1+cu102
+True
+LEN: 0 0
+LOADER: <data_loader.InfiniteDataLoader object at 0x7fb2e5bf9518> <data_loader.InfiniteDataLoader object at 0x7fb2dd6c81d0>
+N_batch: 147
+trian begin
+trian end
+n_person 322
+SAMPLE
+F1_MI: 0.5763832757733852 F1_MA: 0.5135599755142608 ACC_MI: 0.5763832757733852 F1_MA: 0.4717753605274618
+BEST_F1_MI: 0.5763832757733852 BEST_F1_MA: 0.5135599755142608 BEST_ACC_MI: 0.5763832757733852 BEST_F1_MA: 0.4717753605274618
+[[5423 1654  574  607]
+ [ 689  895  495  262]
+ [ 879  502  429   91]
+ [   1    6    5 1097]]
+Epoch: [ 1/200], cls_loss: 0.7080, transfer_loss: 0.0015,person_loss: 0.0000, total_Loss: 0.7230
+trian begin
+trian end
+n_person 322
+SAMPLE
+F1_MI: 0.649055771915644 F1_MA: 0.5679484868855627 ACC_MI: 0.649055771915644 F1_MA: 0.5308206575546981
+BEST_F1_MI: 0.649055771915644 BEST_F1_MA: 0.5679484868855627 BEST_ACC_MI: 0.649055771915644 BEST_F1_MA: 0.5308206575546981
+[[6265 1060  761  172]
+ [ 634  837  451  419]
+ [ 752  359  624  166]
+ [   0    2    0 1107]]
+Epoch: [ 2/200], cls_loss: 0.4803, transfer_loss: 0.0012,person_loss: 0.0000, total_Loss: 0.4921
+trian begin
+trian end
+n_person 322
+SAMPLE
+F1_MI: 0.5974722610037475 F1_MA: 0.5549024835198285 ACC_MI: 0.5974722610037475 F1_MA: 0.5253031873478757
+BEST_F1_MI: 0.649055771915644 BEST_F1_MA: 0.5679484868855627 BEST_ACC_MI: 0.649055771915644 BEST_F1_MA: 0.5308206575546981
+[[5539 2084  491  144]
+ [ 660  987  353  341]
+ [ 730  590  499   82]
+ [   0    2    1 1106]]
+Epoch: [ 3/200], cls_loss: 0.3943, transfer_loss: 0.0006,person_loss: 0.0000, total_Loss: 0.4006
+trian begin
+trian end
+n_person 322
+SAMPLE
+F1_MI: 0.31971489455507385 F1_MA: 0.4996737294482268 ACC_MI: 0.31971489455507385 F1_MA: 0.4622181324372734
+BEST_F1_MI: 0.649055771915644 BEST_F1_MA: 0.5679484868855627 BEST_ACC_MI: 0.649055771915644 BEST_F1_MA: 0.5308206575546981
+[[1168 2853 3992  245]
+ [ 121  574 1220  426]
+ [  18  233 1502  148]
+ [   0    2    0 1107]]
+Epoch: [ 4/200], cls_loss: 0.3754, transfer_loss: 0.0005,person_loss: 0.0000, total_Loss: 0.3806
+trian begin
+trian end
+n_person 322
+SAMPLE
+F1_MI: 0.5776324491145566 F1_MA: 0.5501385175547179 ACC_MI: 0.5776324491145566 F1_MA: 0.5057915411809686
+BEST_F1_MI: 0.649055771915644 BEST_F1_MA: 0.5679484868855627 BEST_ACC_MI: 0.649055771915644 BEST_F1_MA: 0.5308206575546981
+[[5139 1430 1468  221]
+ [ 493  583  914  351]
+ [ 571  225 1033   72]
+ [   0    1    2 1106]]
+Epoch: [ 5/200], cls_loss: 0.3297, transfer_loss: 0.0004,person_loss: 0.0000, total_Loss: 0.3336
+trian begin
+trian end
+n_person 322
+SAMPLE
+F1_MI: 0.39341612168417966 F1_MA: 0.5346044262074542 ACC_MI: 0.3934161216841796 F1_MA: 0.4911839617013461
+BEST_F1_MI: 0.649055771915644 BEST_F1_MA: 0.5679484868855627 BEST_ACC_MI: 0.649055771915644 BEST_F1_MA: 0.5308206575546981
+[[2032 1540 4351  335]
+ [ 183  640 1152  366]
+ [  87  157 1576   81]
+ [   0    2    1 1106]]
+Epoch: [ 6/200], cls_loss: 0.2951, transfer_loss: 0.0003,person_loss: 0.0000, total_Loss: 0.2981
+trian begin
+trian end
+n_person 322
+SAMPLE
+F1_MI: 0.4979792784186935 F1_MA: 0.46785954533342333 ACC_MI: 0.4979792784186935 F1_MA: 0.4177023018093431
+BEST_F1_MI: 0.649055771915644 BEST_F1_MA: 0.5679484868855627 BEST_ACC_MI: 0.649055771915644 BEST_F1_MA: 0.5308206575546981
+[[4417 1893  849 1099]
+ [ 733  665  410  533]
+ [ 732  360  587  222]
+ [   0    1    0 1108]]
+Epoch: [ 7/200], cls_loss: 0.2761, transfer_loss: 0.0003,person_loss: 0.0000, total_Loss: 0.2791
+trian begin
+trian end
+n_person 322

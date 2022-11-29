@@ -1,0 +1,33 @@
+only 2 WISDM UCI ONLY/ONLY.yaml True
+Namespace(backbone='resnet50', batch_size=32, config='ONLY/ONLY.yaml', data_dir='data', device=device(type='cuda'), early_stop=50, epoch_based_training=False, lr=0.003, lr_decay=0.75, lr_gamma=0.0003, lr_scheduler=True, method='True', momentum=0.9, myweight=0.1, n_epoch=200, n_iter_per_epoch=100, num_workers=3, seed=2, src_domain='WISDM', tgt_domain='UCI', tname='transfer', transfer_loss='only', transfer_loss_weight=0.5, use_bottleneck=True, weight_decay=0.0005)
+JUST DO IT
+run my Parkinson code
+transfer
+TRAIN Length: 13609 322 TEST Length: 3369 615
+YYY: 0 3
+DATA_PROFILE   train: 13609 train2: 3369 test: 3369
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7fece1251e10> True
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7fece91f4e80> True
+DATASET.SHAPE: <data_loader.GetTestLoader object at 0x7feda0db2048> False
+CLASS: 4 615
+LLL: {}
+BOTTLENECK_LIST: [Linear(in_features=512, out_features=256, bias=True), ReLU()]
+TYPE: {'loss_type': 'only', 'max_iter': 21000, 'num_class': 4, 'my_person_item': <my_person_item.PersonItem object at 0x7feda0d521d0>}
+initial_lr 1.0
+transfer_world
+method True <class 'str'>
+1.10.1+cu102
+True
+LEN: 0 0
+LOADER: <data_loader.InfiniteDataLoader object at 0x7fece91f4f28> <data_loader.InfiniteDataLoader object at 0x7fece130ff28>
+N_batch: 105
+trian begin
+trian end
+Traceback (most recent call last):
+  File "main.py", line 491, in <module>
+    main()
+  File "main.py", line 467, in main
+    train(source_loader, target_train_loader, target_test_loader,L_test, model, optimizer, scheduler, cl_weight,args)
+  File "main.py", line 356, in train
+    train_loss_person.update(person_loss.item())
+AttributeError: 'int' object has no attribute 'item'

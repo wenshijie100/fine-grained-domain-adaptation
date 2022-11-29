@@ -1,0 +1,1048 @@
+nohup: ignoring input
+lmmd 2022 WISDM UCI DAN/DAN.yaml
+Namespace(backbone='resnet50', batch_size=32, config='DAN/DAN.yaml', data_dir='data', device=device(type='cuda'), early_stop=50, epoch_based_training=False, lr=0.003, lr_decay=0.75, lr_gamma=0.0003, lr_scheduler=True, momentum=0.9, n_epoch=200, n_iter_per_epoch=100, num_workers=3, seed=2022, src_domain='WISDM', tgt_domain='UCI', tname='transfer', transfer_loss='lmmd', transfer_loss_weight=0.5, use_bottleneck=True, weight_decay=0.0005)
+JUST DO IT
+run my Parkinson code
+transfer
+TRAIN Length: 13609 322 TEST Length: 3369 615
+DATA_PROFILE   train: 13609 train2: 3369 test: 3369
+DATASET.SHAPE: <data_loader.GetLoader object at 0x7efd6f1b75e0> True
+DATASET.SHAPE: <data_loader.GetLoader object at 0x7efd66c0da30> True
+DATASET.SHAPE: <data_loader.GetLoader object at 0x7efd66d555b0> False
+CLASS: 4 615
+LLL: {}
+BOTTLENECK_LIST: [Linear(in_features=512, out_features=256, bias=True), ReLU()]
+TYPE: {'loss_type': 'lmmd', 'max_iter': 20000, 'num_class': 4, 'my_person_item': <my_person_item.PersonItem object at 0x7efd66c0df70>}
+KWARGS {'my_person_item': <my_person_item.PersonItem object at 0x7efd66c0df70>}
+TransferNet(
+  (base_network): ResNet(
+    (conv1): Conv1d(3, 64, kernel_size=(3,), stride=(2,), padding=(1,), bias=False)
+    (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+    (relu): ReLU(inplace=True)
+    (maxpool): MaxPool1d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)
+    (layer1): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv1d(64, 64, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(64, 64, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+      (1): BasicBlock(
+        (conv1): Conv1d(64, 64, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(64, 64, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+      (2): BasicBlock(
+        (conv1): Conv1d(64, 64, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(64, 64, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+    )
+    (layer2): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv1d(64, 128, kernel_size=(7,), stride=(2,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(128, 128, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (downsample): Sequential(
+          (0): Conv1d(64, 128, kernel_size=(1,), stride=(2,), bias=False)
+          (1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+      (1): BasicBlock(
+        (conv1): Conv1d(128, 128, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(128, 128, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+      (2): BasicBlock(
+        (conv1): Conv1d(128, 128, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(128, 128, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+      (3): BasicBlock(
+        (conv1): Conv1d(128, 128, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(128, 128, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+    )
+    (layer3): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv1d(128, 256, kernel_size=(7,), stride=(2,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (downsample): Sequential(
+          (0): Conv1d(128, 256, kernel_size=(1,), stride=(2,), bias=False)
+          (1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+      (1): BasicBlock(
+        (conv1): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+      (2): BasicBlock(
+        (conv1): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+      (3): BasicBlock(
+        (conv1): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+      (4): BasicBlock(
+        (conv1): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+      (5): BasicBlock(
+        (conv1): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(256, 256, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+    )
+    (layer4): Sequential(
+      (0): BasicBlock(
+        (conv1): Conv1d(256, 512, kernel_size=(7,), stride=(2,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(512, 512, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (downsample): Sequential(
+          (0): Conv1d(256, 512, kernel_size=(1,), stride=(2,), bias=False)
+          (1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        )
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+      (1): BasicBlock(
+        (conv1): Conv1d(512, 512, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(512, 512, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+      (2): BasicBlock(
+        (conv1): Conv1d(512, 512, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn1): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (relu): ReLU(inplace=True)
+        (conv2): Conv1d(512, 512, kernel_size=(7,), stride=(1,), padding=(3,), bias=False)
+        (bn2): BatchNorm1d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)
+        (dropout): Dropout(p=0.2, inplace=False)
+      )
+    )
+    (avgpool): AdaptiveAvgPool1d(output_size=1)
+  )
+  (bottleneck_layer): Sequential(
+    (0): Linear(in_features=512, out_features=256, bias=True)
+    (1): ReLU()
+  )
+  (classifier_layer): Linear(in_features=256, out_features=4, bias=True)
+  (adapt_loss): TransferLoss(
+    (loss_func): LMMDLoss()
+  )
+  (criterion): CrossEntropyLoss()
+)
+initial_lr 1.0
+1.8.1+cu111
+True
+LEN: 0 0
+LOADER: <data_loader.InfiniteDataLoader object at 0x7efd66c0dbb0> <data_loader.InfiniteDataLoader object at 0x7efd66bf6f40>
+N: 100
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.5170673790442267 BEST_F1_MA: 0.4404133405552124
+[[ 90 803   0   0]
+ [ 73 731   0   0]
+ [268 478   0   0]
+ [  0   5   0 921]]
+Epoch: [ 1/200], cls_loss: 0.7282, transfer_loss: 0.0011, total_Loss: 0.7288, test_loss 1.114706
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.5170673790442267 BEST_F1_MA: 0.4404133405552124
+[[ 49  12 832   0]
+ [ 38   7 759   0]
+ [389  38 319   0]
+ [  2   0   1 923]]
+Epoch: [ 2/200], cls_loss: 0.4643, transfer_loss: 0.0027, total_Loss: 0.4656, test_loss 1.970280
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.5316117542297417 BEST_F1_MA: 0.4545743536104122
+[[144 749   0   0]
+ [ 80 724   0   0]
+ [399 347   0   0]
+ [  0   3   0 923]]
+Epoch: [ 3/200], cls_loss: 0.4248, transfer_loss: 0.0038, total_Loss: 0.4267, test_loss 1.726445
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.5660433363015732 BEST_F1_MA: 0.5521796489564
+[[221 648  24   0]
+ [ 60 736   8   0]
+ [457 260  29   0]
+ [  0   5   0 921]]
+Epoch: [ 4/200], cls_loss: 0.3506, transfer_loss: 0.0054, total_Loss: 0.3533, test_loss 1.914827
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.5660433363015732 BEST_F1_MA: 0.5521796489564
+[[193 700   0   0]
+ [ 84 720   0   0]
+ [543 203   0   0]
+ [  0   9   0 917]]
+Epoch: [ 5/200], cls_loss: 0.3408, transfer_loss: 0.0055, total_Loss: 0.3435, test_loss 1.918462
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.5660433363015732 BEST_F1_MA: 0.5521796489564
+[[193 621  79   0]
+ [ 84 678  42   0]
+ [469 207  70   0]
+ [  0  37   0 889]]
+Epoch: [ 6/200], cls_loss: 0.3409, transfer_loss: 0.0051, total_Loss: 0.3435, test_loss 2.437499
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.599584446423271 BEST_F1_MA: 0.5719447889480017
+[[635 187  71   0]
+ [329 392  83   0]
+ [538 136  72   0]
+ [  0   5   0 921]]
+Epoch: [ 7/200], cls_loss: 0.3231, transfer_loss: 0.0056, total_Loss: 0.3259, test_loss 2.099307
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.599584446423271 BEST_F1_MA: 0.5719447889480017
+[[454 132 307   0]
+ [255 311 238   0]
+ [590  37 119   0]
+ [  0   8   5 913]]
+Epoch: [ 8/200], cls_loss: 0.2980, transfer_loss: 0.0055, total_Loss: 0.3008, test_loss 3.078037
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.599584446423271 BEST_F1_MA: 0.5719447889480017
+[[576 214 103   0]
+ [304 441  59   0]
+ [563 118  65   0]
+ [  2   5   0 919]]
+Epoch: [ 9/200], cls_loss: 0.2299, transfer_loss: 0.0053, total_Loss: 0.2325, test_loss 3.512178
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[590 248  55   0]
+ [210 514  80   0]
+ [565  91  90   0]
+ [  0  53   0 873]]
+Epoch: [10/200], cls_loss: 0.2172, transfer_loss: 0.0068, total_Loss: 0.2206, test_loss 1.989772
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[140 584 169   0]
+ [ 20 701  83   0]
+ [130 585  31   0]
+ [  0   5   0 921]]
+Epoch: [11/200], cls_loss: 0.2036, transfer_loss: 0.0080, total_Loss: 0.2076, test_loss 1.997015
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[222 434 237   0]
+ [113 540 151   0]
+ [501  49 196   0]
+ [  0  15   0 911]]
+Epoch: [12/200], cls_loss: 0.2072, transfer_loss: 0.0076, total_Loss: 0.2110, test_loss 2.665641
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[364 292 237   0]
+ [ 94 384 326   0]
+ [465  71 210   0]
+ [  0  10   0 916]]
+Epoch: [13/200], cls_loss: 0.1842, transfer_loss: 0.0089, total_Loss: 0.1886, test_loss 1.819876
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[134 513 246   0]
+ [ 32 421 351   0]
+ [241 334 171   0]
+ [  0   8   0 918]]
+Epoch: [14/200], cls_loss: 0.1804, transfer_loss: 0.0090, total_Loss: 0.1848, test_loss 2.117442
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[264 511 118   0]
+ [149 537 118   0]
+ [484 183  79   0]
+ [ 22   4   0 900]]
+Epoch: [15/200], cls_loss: 0.1587, transfer_loss: 0.0105, total_Loss: 0.1639, test_loss 2.381560
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[ 96 681 116   0]
+ [ 15 686 103   0]
+ [421 247  78   0]
+ [  0  16   1 909]]
+Epoch: [16/200], cls_loss: 0.1662, transfer_loss: 0.0091, total_Loss: 0.1708, test_loss 2.422752
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[125 560 208   0]
+ [ 66 640  98   0]
+ [468 201  77   0]
+ [  0  11   0 915]]
+Epoch: [17/200], cls_loss: 0.1508, transfer_loss: 0.0112, total_Loss: 0.1564, test_loss 2.181143
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[129 277 487   0]
+ [ 48 525 231   0]
+ [383  59 304   0]
+ [  0   9   5 912]]
+Epoch: [18/200], cls_loss: 0.1246, transfer_loss: 0.0088, total_Loss: 0.1290, test_loss 1.849078
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[258 504 131   0]
+ [129 569 106   0]
+ [394 192 160   0]
+ [  2   8   0 916]]
+Epoch: [19/200], cls_loss: 0.1337, transfer_loss: 0.0096, total_Loss: 0.1385, test_loss 2.451069
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[184 359 350   0]
+ [101 487 216   0]
+ [450 169 127   0]
+ [  7   0   1 918]]
+Epoch: [20/200], cls_loss: 0.1382, transfer_loss: 0.0145, total_Loss: 0.1455, test_loss 2.377959
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[135 360 398   0]
+ [ 72 518 214   0]
+ [491 139 116   0]
+ [  0   7   0 919]]
+Epoch: [21/200], cls_loss: 0.1329, transfer_loss: 0.0116, total_Loss: 0.1388, test_loss 2.692352
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[197 119 577   0]
+ [111 347 346   0]
+ [559  47 140   0]
+ [  0   2   0 924]]
+Epoch: [22/200], cls_loss: 0.1193, transfer_loss: 0.0142, total_Loss: 0.1264, test_loss 2.775415
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[129 331 433   0]
+ [ 70 451 283   0]
+ [427 142 177   0]
+ [  2  12   1 911]]
+Epoch: [23/200], cls_loss: 0.1352, transfer_loss: 0.0148, total_Loss: 0.1426, test_loss 2.527897
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[109 506 278   0]
+ [ 50 527 227   0]
+ [542  99 105   0]
+ [  0  18   0 908]]
+Epoch: [24/200], cls_loss: 0.1196, transfer_loss: 0.0121, total_Loss: 0.1257, test_loss 2.779078
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[162 306 425   0]
+ [ 93 423 288   0]
+ [556  52 138   0]
+ [  0  12   0 914]]
+Epoch: [25/200], cls_loss: 0.1121, transfer_loss: 0.0116, total_Loss: 0.1179, test_loss 2.682096
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[120 467 306   0]
+ [ 61 585 158   0]
+ [532 162  52   0]
+ [  0   7   0 919]]
+Epoch: [26/200], cls_loss: 0.1050, transfer_loss: 0.0127, total_Loss: 0.1113, test_loss 2.765813
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[104 455 334   0]
+ [ 46 545 213   0]
+ [444 144 158   0]
+ [  0   7   0 919]]
+Epoch: [27/200], cls_loss: 0.1040, transfer_loss: 0.0108, total_Loss: 0.1094, test_loss 2.710990
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[ 58 594 241   0]
+ [ 16 691  97   0]
+ [453 178 115   0]
+ [  0   4   0 922]]
+Epoch: [28/200], cls_loss: 0.1065, transfer_loss: 0.0112, total_Loss: 0.1122, test_loss 2.746304
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[ 96 434 363   0]
+ [ 43 549 212   0]
+ [461  68 217   0]
+ [  1   5   0 920]]
+Epoch: [29/200], cls_loss: 0.1335, transfer_loss: 0.0104, total_Loss: 0.1387, test_loss 2.613686
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6135351736420303 BEST_F1_MA: 0.5953368307785435
+[[ 68 308 517   0]
+ [ 39 498 267   0]
+ [138 111 497   0]
+ [  0   5   0 921]]
+Epoch: [30/200], cls_loss: 0.1156, transfer_loss: 0.0133, total_Loss: 0.1223, test_loss 1.806831
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6251113089937667 BEST_F1_MA: 0.6188502004845429
+[[220 379 294   0]
+ [ 50 470 284   0]
+ [192  45 509   0]
+ [  2  17   0 907]]
+Epoch: [31/200], cls_loss: 0.0864, transfer_loss: 0.0091, total_Loss: 0.0910, test_loss 1.641509
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6251113089937667 BEST_F1_MA: 0.6188502004845429
+[[206 229 458   0]
+ [ 84 408 312   0]
+ [413  27 306   0]
+ [  0   4   2 920]]
+Epoch: [32/200], cls_loss: 0.0980, transfer_loss: 0.0134, total_Loss: 0.1047, test_loss 2.601620
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6251113089937667 BEST_F1_MA: 0.6188502004845429
+[[ 37 276 580   0]
+ [ 11 546 247   0]
+ [183  79 484   0]
+ [  1  10   0 915]]
+Epoch: [33/200], cls_loss: 0.0828, transfer_loss: 0.0112, total_Loss: 0.0884, test_loss 2.226948
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6251113089937667 BEST_F1_MA: 0.6188502004845429
+[[124 471 298   0]
+ [ 37 699  68   0]
+ [403 217 126   0]
+ [  0  16   0 910]]
+Epoch: [34/200], cls_loss: 0.1023, transfer_loss: 0.0119, total_Loss: 0.1082, test_loss 2.424287
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[374 310 209   0]
+ [111 544 149   0]
+ [193  71 482   0]
+ [  0  16   0 910]]
+Epoch: [35/200], cls_loss: 0.0917, transfer_loss: 0.0118, total_Loss: 0.0976, test_loss 1.737216
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[115 372 406   0]
+ [ 52 568 184   0]
+ [292 195 259   0]
+ [  1   5   0 920]]
+Epoch: [36/200], cls_loss: 0.0948, transfer_loss: 0.0108, total_Loss: 0.1002, test_loss 2.340807
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[113 385 395   0]
+ [ 41 584 179   0]
+ [506 172  68   0]
+ [  0  10   0 916]]
+Epoch: [37/200], cls_loss: 0.0869, transfer_loss: 0.0119, total_Loss: 0.0929, test_loss 2.638447
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[122 416 355   0]
+ [ 63 538 203   0]
+ [594 107  45   0]
+ [  0   7   0 919]]
+Epoch: [38/200], cls_loss: 0.0907, transfer_loss: 0.0101, total_Loss: 0.0957, test_loss 3.182463
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[180 315 398   0]
+ [ 77 487 240   0]
+ [516  95 135   0]
+ [  0   1   2 923]]
+Epoch: [39/200], cls_loss: 0.0791, transfer_loss: 0.0092, total_Loss: 0.0837, test_loss 2.705369
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[235 326 332   0]
+ [ 98 532 174   0]
+ [537  66 143   0]
+ [  0   5   0 921]]
+Epoch: [40/200], cls_loss: 0.0765, transfer_loss: 0.0097, total_Loss: 0.0813, test_loss 3.004911
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[ 98 205 590   0]
+ [ 58 428 318   0]
+ [466  51 229   0]
+ [  2   9   1 914]]
+Epoch: [41/200], cls_loss: 0.0994, transfer_loss: 0.0111, total_Loss: 0.1050, test_loss 2.495927
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[ 92 317 484   0]
+ [ 47 544 213   0]
+ [436 195 115   0]
+ [  1  12   0 913]]
+Epoch: [42/200], cls_loss: 0.0682, transfer_loss: 0.0093, total_Loss: 0.0728, test_loss 2.934145
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[261 260 372   0]
+ [ 95 508 201   0]
+ [418 225 103   0]
+ [  0  10   0 916]]
+Epoch: [43/200], cls_loss: 0.0781, transfer_loss: 0.0090, total_Loss: 0.0826, test_loss 2.637579
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[266 105 522   0]
+ [ 86 297 421   0]
+ [380 177 189   0]
+ [  0   8   0 918]]
+Epoch: [44/200], cls_loss: 0.0773, transfer_loss: 0.0108, total_Loss: 0.0827, test_loss 2.612305
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[156 359 378   0]
+ [ 92 483 229   0]
+ [538 120  88   0]
+ [  0   5   0 921]]
+Epoch: [45/200], cls_loss: 0.0808, transfer_loss: 0.0124, total_Loss: 0.0870, test_loss 2.943812
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[121 436 336   0]
+ [ 53 523 228   0]
+ [347 178 221   0]
+ [  1  12   1 912]]
+Epoch: [46/200], cls_loss: 0.0858, transfer_loss: 0.0106, total_Loss: 0.0911, test_loss 2.552277
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[111 387 395   0]
+ [ 21 439 344   0]
+ [293 427  26   0]
+ [  0  12   0 914]]
+Epoch: [47/200], cls_loss: 0.0896, transfer_loss: 0.0117, total_Loss: 0.0955, test_loss 2.598128
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[109 353 431   0]
+ [ 41 457 306   0]
+ [146 225 375   0]
+ [  4   7   0 915]]
+Epoch: [48/200], cls_loss: 0.0532, transfer_loss: 0.0097, total_Loss: 0.0580, test_loss 2.567558
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[168 402 323   0]
+ [ 34 459 311   0]
+ [331 343  72   0]
+ [  0  16   0 910]]
+Epoch: [49/200], cls_loss: 0.0630, transfer_loss: 0.0142, total_Loss: 0.0701, test_loss 3.367735
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[361 155 377   0]
+ [105 401 298   0]
+ [400 245 101   0]
+ [  0   6   0 920]]
+Epoch: [50/200], cls_loss: 0.0866, transfer_loss: 0.0133, total_Loss: 0.0932, test_loss 2.273004
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[199 157 537   0]
+ [ 66 449 289   0]
+ [409 218 119   0]
+ [  1  15   0 910]]
+Epoch: [51/200], cls_loss: 0.0684, transfer_loss: 0.0100, total_Loss: 0.0734, test_loss 2.956885
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[ 86 241 566   0]
+ [ 27 405 372   0]
+ [461 166 119   0]
+ [  3   4   1 918]]
+Epoch: [52/200], cls_loss: 0.0593, transfer_loss: 0.0136, total_Loss: 0.0661, test_loss 3.439334
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[108 391 394   0]
+ [ 31 515 258   0]
+ [306 243 197   0]
+ [  0  10   0 916]]
+Epoch: [53/200], cls_loss: 0.0681, transfer_loss: 0.0090, total_Loss: 0.0726, test_loss 2.506665
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[136 297 460   0]
+ [ 42 435 327   0]
+ [513 172  61   0]
+ [  1   9   0 916]]
+Epoch: [54/200], cls_loss: 0.0722, transfer_loss: 0.0089, total_Loss: 0.0767, test_loss 3.045865
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[116 531 246   0]
+ [ 84 544 176   0]
+ [601 131  14   0]
+ [  1  13   0 912]]
+Epoch: [55/200], cls_loss: 0.0630, transfer_loss: 0.0083, total_Loss: 0.0671, test_loss 3.423989
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[131 482 280   0]
+ [109 465 230   0]
+ [579 132  35   0]
+ [  0  11   0 915]]
+Epoch: [56/200], cls_loss: 0.0635, transfer_loss: 0.0131, total_Loss: 0.0701, test_loss 3.243609
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[233 413 247   0]
+ [162 571  71   0]
+ [374 197 175   0]
+ [  1   9   0 916]]
+Epoch: [57/200], cls_loss: 0.0662, transfer_loss: 0.0116, total_Loss: 0.0720, test_loss 2.640233
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[142 478 273   0]
+ [128 533 143   0]
+ [402 146 198   0]
+ [  1   3   6 916]]
+Epoch: [58/200], cls_loss: 0.0708, transfer_loss: 0.0116, total_Loss: 0.0766, test_loss 2.580232
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[ 95 606 192   0]
+ [ 50 461 293   0]
+ [356 137 253   0]
+ [  0  13   1 912]]
+Epoch: [59/200], cls_loss: 0.0694, transfer_loss: 0.0117, total_Loss: 0.0753, test_loss 2.839676
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[122 479 292   0]
+ [ 56 518 230   0]
+ [276 115 355   0]
+ [  0   7   2 917]]
+Epoch: [60/200], cls_loss: 0.0537, transfer_loss: 0.0093, total_Loss: 0.0583, test_loss 2.670130
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[103 529 261   0]
+ [ 88 499 217   0]
+ [460 174 112   0]
+ [  0  10   0 916]]
+Epoch: [61/200], cls_loss: 0.0581, transfer_loss: 0.0082, total_Loss: 0.0622, test_loss 3.075479
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[183 517 193   0]
+ [191 489 124   0]
+ [680  48  18   0]
+ [  1   3   0 922]]
+Epoch: [62/200], cls_loss: 0.0606, transfer_loss: 0.0114, total_Loss: 0.0663, test_loss 3.452161
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[144 544 205   0]
+ [ 96 529 179   0]
+ [317 168 261   0]
+ [  1   8   0 917]]
+Epoch: [63/200], cls_loss: 0.0667, transfer_loss: 0.0151, total_Loss: 0.0742, test_loss 2.382962
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[153 317 423   0]
+ [126 368 310   0]
+ [203 195 348   0]
+ [  0   8   0 918]]
+Epoch: [64/200], cls_loss: 0.0490, transfer_loss: 0.0117, total_Loss: 0.0548, test_loss 2.613554
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[224 214 455   0]
+ [131 263 410   0]
+ [167 477 102   0]
+ [  1   4   0 921]]
+Epoch: [65/200], cls_loss: 0.0531, transfer_loss: 0.0087, total_Loss: 0.0574, test_loss 3.075476
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[110 328 455   0]
+ [ 83 394 327   0]
+ [318 241 187   0]
+ [  0  11   1 914]]
+Epoch: [66/200], cls_loss: 0.0473, transfer_loss: 0.0085, total_Loss: 0.0516, test_loss 3.034132
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[153 376 364   0]
+ [ 94 476 234   0]
+ [421 202 123   0]
+ [  0   7   0 919]]
+Epoch: [67/200], cls_loss: 0.0709, transfer_loss: 0.0124, total_Loss: 0.0771, test_loss 2.613731
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[179 257 457   0]
+ [135 355 314   0]
+ [458 117 171   0]
+ [  0   9   0 917]]
+Epoch: [68/200], cls_loss: 0.0682, transfer_loss: 0.0132, total_Loss: 0.0748, test_loss 3.012209
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[165  73 655   0]
+ [ 85 204 515   0]
+ [400 212 134   0]
+ [  0  17   0 909]]
+Epoch: [69/200], cls_loss: 0.0511, transfer_loss: 0.0086, total_Loss: 0.0554, test_loss 3.150536
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[214 180 499   0]
+ [ 91 277 436   0]
+ [400 284  62   0]
+ [  0  10   0 916]]
+Epoch: [70/200], cls_loss: 0.0519, transfer_loss: 0.0101, total_Loss: 0.0569, test_loss 3.522014
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[230 248 415   0]
+ [103 319 382   0]
+ [473 206  67   0]
+ [  0  18   0 908]]
+Epoch: [71/200], cls_loss: 0.0524, transfer_loss: 0.0114, total_Loss: 0.0581, test_loss 3.192019
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[179 471 243   0]
+ [ 94 393 317   0]
+ [469 148 129   0]
+ [  0  13   0 913]]
+Epoch: [72/200], cls_loss: 0.0541, transfer_loss: 0.0098, total_Loss: 0.0590, test_loss 3.240102
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[198 220 475   0]
+ [ 63 219 522   0]
+ [405 238 103   0]
+ [  0   9   0 917]]
+Epoch: [73/200], cls_loss: 0.0482, transfer_loss: 0.0078, total_Loss: 0.0521, test_loss 3.510582
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[178 378 337   0]
+ [ 26 357 421   0]
+ [203 200 343   0]
+ [  0   6   1 919]]
+Epoch: [74/200], cls_loss: 0.0504, transfer_loss: 0.0079, total_Loss: 0.0543, test_loss 2.578202
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[274 300 319   0]
+ [ 45 349 410   0]
+ [385 196 165   0]
+ [  0   4   1 921]]
+Epoch: [75/200], cls_loss: 0.0413, transfer_loss: 0.0067, total_Loss: 0.0447, test_loss 3.212706
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[278 283 332   0]
+ [ 91 383 330   0]
+ [485 182  79   0]
+ [  0   9   1 916]]
+Epoch: [76/200], cls_loss: 0.0549, transfer_loss: 0.0121, total_Loss: 0.0610, test_loss 3.128632
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[278 364 251   0]
+ [ 50 399 355   0]
+ [210 321 215   0]
+ [  1  12   2 911]]
+Epoch: [77/200], cls_loss: 0.0450, transfer_loss: 0.0132, total_Loss: 0.0516, test_loss 2.769680
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[598 105 190   0]
+ [182 203 419   0]
+ [335 321  90   0]
+ [  1   9   0 916]]
+Epoch: [78/200], cls_loss: 0.0484, transfer_loss: 0.0091, total_Loss: 0.0530, test_loss 2.833058
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[510 171 212   0]
+ [148 225 431   0]
+ [231 407 108   0]
+ [  0  10   0 916]]
+Epoch: [79/200], cls_loss: 0.0609, transfer_loss: 0.0136, total_Loss: 0.0677, test_loss 2.601152
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[193 482 218   0]
+ [ 65 336 403   0]
+ [167 479 100   0]
+ [  0   7   0 919]]
+Epoch: [80/200], cls_loss: 0.0550, transfer_loss: 0.0098, total_Loss: 0.0599, test_loss 2.642821
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[279 399 215   0]
+ [114 347 343   0]
+ [357 256 133   0]
+ [  0  14   0 912]]
+Epoch: [81/200], cls_loss: 0.0509, transfer_loss: 0.0079, total_Loss: 0.0549, test_loss 2.814209
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[344 299 250   0]
+ [162 242 400   0]
+ [507 145  94   0]
+ [  0  18   0 908]]
+Epoch: [82/200], cls_loss: 0.0450, transfer_loss: 0.0096, total_Loss: 0.0498, test_loss 3.419512
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[347 290 256   0]
+ [130 362 312   0]
+ [418 265  63   0]
+ [  0   8   1 917]]
+Epoch: [83/200], cls_loss: 0.0512, transfer_loss: 0.0093, total_Loss: 0.0558, test_loss 3.315904
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[220 318 355   0]
+ [151 308 345   0]
+ [278 425  43   0]
+ [  0  11   0 915]]
+Epoch: [84/200], cls_loss: 0.0471, transfer_loss: 0.0076, total_Loss: 0.0509, test_loss 3.300197
+trian begin
+trian end
+n_person 615
+SAMPLE
+BEST_F1_MI: 0.6856634016028496 BEST_F1_MA: 0.678465637866132
+[[335 268 290   0]
+ [139 262 403   0]
+ [570 110  66   0]
+ [  0  13   0 913]]
+Epoch: [85/200], cls_loss: 0.0517, transfer_loss: 0.0090, total_Loss: 0.0562, test_loss 2.954833
+[[374 310 209   0]
+ [111 544 149   0]
+ [193  71 482   0]
+ [  0  16   0 910]]
+[[374 310 209   0]
+ [111 544 149   0]
+ [193  71 482   0]
+ [  0  16   0 910]]
+ARG: Namespace(backbone='resnet50', batch_size=32, config='DAN/DAN.yaml', data_dir='data', device=device(type='cuda'), early_stop=50, epoch_based_training=False, lr=0.003, lr_decay=0.75, lr_gamma=0.0003, lr_scheduler=True, max_iter=20000, momentum=0.9, n_class=4, n_epoch=200, n_iter_per_epoch=100, num_workers=3, seed=2022, src_domain='WISDM', tgt_domain='UCI', tname='transfer', transfer_loss='lmmd', transfer_loss_weight=0.5, use_bottleneck=True, weight_decay=0.0005)
+CL_weight [1, 1, 1, 1]

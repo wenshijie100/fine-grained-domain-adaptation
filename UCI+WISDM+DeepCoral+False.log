@@ -1,0 +1,35 @@
+coral 2 UCI WISDM DeepCoral/DeepCoral.yaml False
+Namespace(backbone='resnet50', batch_size=32, config='DeepCoral/DeepCoral.yaml', data_dir='data', device=device(type='cuda'), early_stop=50, epoch_based_training=False, lr=0.003, lr_decay=0.75, lr_gamma=0.0003, lr_scheduler=True, method='False', momentum=0.9, myweight=0.1, n_epoch=200, n_iter_per_epoch=100, num_workers=3, seed=2, src_domain='UCI', tgt_domain='WISDM', tname='transfer', transfer_loss='coral', transfer_loss_weight=10.0, use_bottleneck=True, weight_decay=0.0005)
+JUST DO IT
+run my Parkinson code
+transfer
+TRAIN Length: 3369 615 TEST Length: 13609 322
+YYY: 0 3
+DATA_PROFILE   train: 3369 train2: 13609 test: 13609
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7faaea8cde10> True
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7faaea41c048> True
+DATASET.SHAPE: <data_loader.GetTestLoader object at 0x7faba200d048> False
+CLASS: 4 322
+LLL: {}
+BOTTLENECK_LIST: [Linear(in_features=512, out_features=256, bias=True), ReLU()]
+TYPE: {'loss_type': 'coral', 'max_iter': 21000, 'num_class': 4, 'my_person_item': <my_person_item.PersonItem object at 0x7faba1f7f1d0>}
+Traceback (most recent call last):
+  File "main.py", line 491, in <module>
+    main()
+  File "main.py", line 451, in main
+    model = get_model(cl_weight, myPI,args)
+  File "main.py", line 100, in get_model
+    model = models.TransferNet( args.n_class ,myPI=myPI,transfer_loss=args.transfer_loss, base_net=args.backbone, max_iter=args.max_iter,cl_weight=cl_weight, use_bottleneck=args.use_bottleneck).to(args.device)
+  File "/home/wenshijie/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 899, in to
+    return self._apply(convert)
+  File "/home/wenshijie/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 570, in _apply
+    module._apply(fn)
+  File "/home/wenshijie/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 570, in _apply
+    module._apply(fn)
+  File "/home/wenshijie/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 593, in _apply
+    param_applied = fn(param)
+  File "/home/wenshijie/.local/lib/python3.6/site-packages/torch/nn/modules/module.py", line 897, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+RuntimeError: CUDA error: unknown error
+CUDA kernel errors might be asynchronously reported at some other API call,so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1.

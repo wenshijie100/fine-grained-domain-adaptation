@@ -1,0 +1,37 @@
+nohup: ignoring input
+lmmd 2022 77G own DAN/DAN.yaml
+Namespace(backbone='resnet50', batch_size=32, config='DAN/DAN.yaml', data_dir='data', device=device(type='cuda'), early_stop=50, epoch_based_training=False, lr=0.0001, lr_decay=0.75, lr_gamma=0.0003, lr_scheduler=True, momentum=0.9, n_epoch=200, n_iter_per_epoch=100, num_workers=3, seed=2022, src_domain='77G', tgt_domain='own', tname='transfer', transfer_loss='lmmd', transfer_loss_weight=0.5, use_bottleneck=True, weight_decay=0.0005)
+JUST DO IT
+run my Parkinson code
+transfer
+TRAIN Length: 2593 255 TEST Length: 2804 565
+DATA_PROFILE   train: 2593 train2: 2804 test: 2804
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7faa4f0f4430> True
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7faa46d4cf10> True
+DATASET.SHAPE: <data_loader.GetTestLoader object at 0x7faa46d4c2e0> False
+CLASS: 4 565
+LLL: {}
+BOTTLENECK_LIST: [Linear(in_features=2048, out_features=256, bias=True), ReLU()]
+TYPE: {'loss_type': 'lmmd', 'max_iter': 17400, 'num_class': 4, 'my_person_item': <my_person_item.PersonItem object at 0x7faa46cfa850>}
+KWARGS {'my_person_item': <my_person_item.PersonItem object at 0x7faa46cfa850>}
+Traceback (most recent call last):
+  File "main.py", line 552, in <module>
+    main()
+  File "main.py", line 464, in main
+    model = get_model(cl_weight, myPI,args)
+  File "main.py", line 101, in get_model
+    model = models.TransferNet( args.n_class ,myPI=myPI,transfer_loss=args.transfer_loss, base_net=args.backbone, max_iter=args.max_iter,cl_weight=cl_weight, use_bottleneck=args.use_bottleneck).to(args.device)
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 673, in to
+    return self._apply(convert)
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 387, in _apply
+    module._apply(fn)
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 387, in _apply
+    module._apply(fn)
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 387, in _apply
+    module._apply(fn)
+  [Previous line repeated 1 more time]
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 409, in _apply
+    param_applied = fn(param)
+  File "/root/miniconda3/lib/python3.8/site-packages/torch/nn/modules/module.py", line 671, in convert
+    return t.to(device, dtype if t.is_floating_point() or t.is_complex() else None, non_blocking)
+RuntimeError: CUDA out of memory. Tried to allocate 12.00 MiB (GPU 0; 23.69 GiB total capacity; 276.65 MiB already allocated; 10.56 MiB free; 294.00 MiB reserved in total by PyTorch)

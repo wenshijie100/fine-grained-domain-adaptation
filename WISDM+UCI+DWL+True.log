@@ -1,0 +1,33 @@
+dwl 2 WISDM UCI DWL/DWL.yaml True
+Namespace(backbone='resnet50', batch_size=32, config='DWL/DWL.yaml', data_dir='data', device=device(type='cuda'), early_stop=50, epoch_based_training=False, lr=0.003, lr_decay=0.75, lr_gamma=0.0003, lr_scheduler=True, method='True', momentum=0.9, myweight=0.1, n_epoch=200, n_iter_per_epoch=100, num_workers=3, seed=2, src_domain='WISDM', tgt_domain='UCI', tname='transfer', transfer_loss='dwl', transfer_loss_weight=0.5, use_bottleneck=True, weight_decay=0.0005)
+JUST DO IT
+run my Parkinson code
+transfer
+TRAIN Length: 13609 322 TEST Length: 3369 615
+YYY: 0 3
+DATA_PROFILE   train: 13609 train2: 3369 test: 3369
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7fe8369c1080> True
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7fe8369af1d0> True
+DATASET.SHAPE: <data_loader.GetTestLoader object at 0x7fe8369a0a90> False
+CLASS: 4 615
+transfer_world
+method True <class 'str'>
+1.10.1+cu102
+True
+LEN: 0 0
+LOADER: <data_loader.InfiniteDataLoader object at 0x7fe87072ab00> <data_loader.InfiniteDataLoader object at 0x7fe8369a09b0>
+N_batch: 105
+trian begin
+trian end
+ACC: 22.588305135054913
+SAMPLE
+F1_MI: 0.2226179875333927 F1_MA: 0.15000039343657 ACC_MI: 0.2226179875333927 F1_MA: 0.1126803489798534
+BEST_F1_MI: 0.2226179875333927 BEST_F1_MA: 0.15000039343657 BEST_ACC_MI: 0.2226179875333927 BEST_F1_MA: 0.1126803489798534
+[[288 605   0   0]
+ [341 462   0   1]
+ [616 112   0  18]
+ [  1 925   0   0]]
+Epoch: [ 1/200], cls_loss: 0.0000, transfer_loss: 0.0000,person_loss: 0.0000, total_Loss: 0.0000
+trian begin
+K is too much
+please input again

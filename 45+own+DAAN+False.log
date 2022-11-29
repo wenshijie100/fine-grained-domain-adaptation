@@ -1,0 +1,637 @@
+daan 1 45 own DAAN/DAAN.yaml False
+Namespace(backbone='resnet50', batch_size=32, config='DAAN/DAAN.yaml', data_dir='data', device=device(type='cuda'), early_stop=50, epoch_based_training=False, lr=0.003, lr_decay=0.75, lr_gamma=0.0003, lr_scheduler=True, method='False', momentum=0.9, myweight=0.1, n_epoch=200, n_iter_per_epoch=100, num_workers=3, seed=1, src_domain='45', tgt_domain='own', tname='transfer', transfer_loss='daan', transfer_loss_weight=0.5, use_bottleneck=True, weight_decay=0.0005)
+JUST DO IT
+run my Parkinson code
+transfer
+TRAIN Length: 56845 1995 TEST Length: 3299 578
+YYY: 0 3
+DATA_PROFILE   train: 56845 train2: 3299 test: 3299
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7f6b1c0b8400> True
+DATASET.SHAPE: <data_loader.GetTrainLoader object at 0x7f6b1c0b8b50> True
+DATASET.SHAPE: <data_loader.GetTestLoader object at 0x7f6b13cad430> False
+CLASS: 4 578
+LLL: {}
+BOTTLENECK_LIST: [Linear(in_features=512, out_features=256, bias=True), ReLU()]
+TYPE: {'loss_type': 'daan', 'max_iter': 20600, 'num_class': 4, 'my_person_item': <my_person_item.PersonItem object at 0x7f6b13cad8e0>}
+initial_lr 1.0
+transfer_world
+method False <class 'str'>
+1.8.1+cu111
+True
+LEN: 0 0
+LOADER: <data_loader.InfiniteDataLoader object at 0x7f6b1c0b8370> <data_loader.InfiniteDataLoader object at 0x7f6b13cad880>
+N_batch: 103
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9387693240375872 F1_MA: 0.3242724311093014 ACC_MI: 0.9387693240375872 F1_MA: 0.3076641628463358
+BEST_F1_MI: 0.9387693240375872 BEST_F1_MA: 0.3242724311093014 BEST_ACC_MI: 0.9387693240375872 BEST_F1_MA: 0.3076641628463358
+[[3084    0    0    1]
+ [  74    0    0    1]
+ [  73    0    0   31]
+ [  22    0    0   13]]
+Epoch: [ 1/200], cls_loss: 0.5742, transfer_loss: 0.0192,person_loss: 0.0000, total_Loss: 0.5838
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9369505910882086 F1_MA: 0.3012862025478272 ACC_MI: 0.9369505910882086 F1_MA: 0.3500924668757901
+BEST_F1_MI: 0.9387693240375872 BEST_F1_MA: 0.3242724311093014 BEST_ACC_MI: 0.9387693240375872 BEST_F1_MA: 0.3500924668757901
+[[3085    0    0    0]
+ [  75    0    0    0]
+ [  98    0    6    0]
+ [  28    0    7    0]]
+Epoch: [ 2/200], cls_loss: 0.5020, transfer_loss: 0.0172,person_loss: 0.0000, total_Loss: 0.5106
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9372537132464384 F1_MA: 0.34629798266570955 ACC_MI: 0.9372537132464384 F1_MA: 0.40949376710246277
+BEST_F1_MI: 0.9387693240375872 BEST_F1_MA: 0.34629798266570955 BEST_ACC_MI: 0.9387693240375872 BEST_F1_MA: 0.40949376710246277
+[[3085    0    0    0]
+ [  75    0    0    0]
+ [ 101    0    0    3]
+ [  28    0    0    7]]
+Epoch: [ 3/200], cls_loss: 0.4719, transfer_loss: 0.0175,person_loss: 0.0000, total_Loss: 0.4807
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9451348893604122 F1_MA: 0.3809047635563127 ACC_MI: 0.9451348893604122 F1_MA: 0.3469414253502572
+BEST_F1_MI: 0.9451348893604122 BEST_F1_MA: 0.3809047635563127 BEST_ACC_MI: 0.9451348893604122 BEST_F1_MA: 0.40949376710246277
+[[3045    0   40    0]
+ [  35    0   40    0]
+ [  31    0   73    0]
+ [  11    0   24    0]]
+Epoch: [ 4/200], cls_loss: 0.4110, transfer_loss: 0.0176,person_loss: 0.0000, total_Loss: 0.4198
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.957259775689603 F1_MA: 0.5107873219642565 ACC_MI: 0.957259775689603 F1_MA: 0.5691219030617765
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[3083    0    2    0]
+ [  35    0   40    0]
+ [  34    0   68    2]
+ [   8    0   20    7]]
+Epoch: [ 5/200], cls_loss: 0.4355, transfer_loss: 0.0180,person_loss: 0.0000, total_Loss: 0.4445
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9548347984237647 F1_MA: 0.3836405667307135 ACC_MI: 0.9548347984237647 F1_MA: 0.3580141843971631
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[3082    0    3    0]
+ [  25    0   50    0]
+ [  36    0   68    0]
+ [   6    0   29    0]]
+Epoch: [ 6/200], cls_loss: 0.4235, transfer_loss: 0.0180,person_loss: 0.0000, total_Loss: 0.4325
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9448317672021824 F1_MA: 0.4416396985928784 ACC_MI: 0.9448317672021824 F1_MA: 0.5384975194297228
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[3085    0    0    0]
+ [  73    0    1    1]
+ [  65    0   22   17]
+ [  22    0    3   10]]
+Epoch: [ 7/200], cls_loss: 0.4176, transfer_loss: 0.0181,person_loss: 0.0000, total_Loss: 0.4267
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9133070627462867 F1_MA: 0.34843338924770495 ACC_MI: 0.9133070627462867 F1_MA: 0.30473519640637564
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[2943    0  142    0]
+ [  20    0   55    0]
+ [  34    0   70    0]
+ [  11    0   24    0]]
+Epoch: [ 8/200], cls_loss: 0.4108, transfer_loss: 0.0182,person_loss: 0.0000, total_Loss: 0.4199
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.04213397999393756 F1_MA: 0.21712929374921955 ACC_MI: 0.04213397999393756 F1_MA: 0.19159654631083203
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[  36    0 3049    0]
+ [  10    0   65    0]
+ [   1    0  103    0]
+ [   2    0   33    0]]
+Epoch: [ 9/200], cls_loss: 0.3903, transfer_loss: 0.0181,person_loss: 0.0000, total_Loss: 0.3994
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.21309487723552592 F1_MA: 0.4034405303113614 ACC_MI: 0.21309487723552592 F1_MA: 0.5041518119670685
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[ 595    0 2490    0]
+ [   9    0   66    0]
+ [   2    0  102    0]
+ [   2    0   27    6]]
+Epoch: [10/200], cls_loss: 0.3850, transfer_loss: 0.0181,person_loss: 0.0000, total_Loss: 0.3941
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9421036677781146 F1_MA: 0.3791877438280213 ACC_MI: 0.9421036677781146 F1_MA: 0.34963877162552104
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[3083    0    1    1]
+ [  44    0    8   23]
+ [  45    0    3   56]
+ [  11    0    2   22]]
+Epoch: [11/200], cls_loss: 0.4108, transfer_loss: 0.0179,person_loss: 0.0000, total_Loss: 0.4197
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9539254319490755 F1_MA: 0.46331324796930934 ACC_MI: 0.9539254319490755 F1_MA: 0.4333580623634387
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[3067    0   18    0]
+ [  18    0   56    1]
+ [  12    0   68   24]
+ [   3    0   20   12]]
+Epoch: [12/200], cls_loss: 0.4121, transfer_loss: 0.0180,person_loss: 0.0000, total_Loss: 0.4211
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9527129433161564 F1_MA: 0.3894068392263607 ACC_MI: 0.9527129433161564 F1_MA: 0.38266406095848277
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[3082    0    3    0]
+ [  52    0   23    0]
+ [  43    0   61    0]
+ [  14    0   21    0]]
+Epoch: [13/200], cls_loss: 0.3722, transfer_loss: 0.0178,person_loss: 0.0000, total_Loss: 0.3812
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.7820551682327979 F1_MA: 0.3229637693098379 ACC_MI: 0.7820551682327979 F1_MA: 0.2720961161239702
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[2499    0  586    0]
+ [  21    0   54    0]
+ [  23    0   81    0]
+ [   6    0   29    0]]
+Epoch: [14/200], cls_loss: 0.4001, transfer_loss: 0.0169,person_loss: 0.0000, total_Loss: 0.4085
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.03849651409518036 F1_MA: 0.2191651259210413 ACC_MI: 0.03849651409518036 F1_MA: 0.1953818487909397
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[  24    0 3061    0]
+ [   6    0   69    0]
+ [   1    0  103    0]
+ [   1    0   34    0]]
+Epoch: [15/200], cls_loss: 0.3943, transfer_loss: 0.0170,person_loss: 0.0000, total_Loss: 0.4028
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9430130342528039 F1_MA: 0.3521205357142857 ACC_MI: 0.9430130342528039 F1_MA: 0.4032464212678937
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[3085    0    0    0]
+ [  74    0    1    0]
+ [  78    0   26    0]
+ [  23    0   12    0]]
+Epoch: [16/200], cls_loss: 0.3892, transfer_loss: 0.0164,person_loss: 0.0000, total_Loss: 0.3974
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9542285541073052 F1_MA: 0.40467917111208423 ACC_MI: 0.9542285541073052 F1_MA: 0.3587124095468429
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[3058    0   27    0]
+ [  23    0   52    0]
+ [  14    0   90    0]
+ [   3    0   32    0]]
+Epoch: [17/200], cls_loss: 0.3853, transfer_loss: 0.0174,person_loss: 0.0000, total_Loss: 0.3940
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.2600788117611397 F1_MA: 0.27035299730693607 ACC_MI: 0.2600788117611397 F1_MA: 0.251309214077349
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[ 762    0 2323    0]
+ [  15    0   60    0]
+ [   8    0   96    0]
+ [   3    0   32    0]]
+Epoch: [18/200], cls_loss: 0.3948, transfer_loss: 0.0176,person_loss: 0.0000, total_Loss: 0.4037
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9445286450439527 F1_MA: 0.3578024391399306 ACC_MI: 0.9445286450439527 F1_MA: 0.398693030349636
+BEST_F1_MI: 0.957259775689603 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.957259775689603 BEST_F1_MA: 0.5691219030617765
+[[3085    0    0    0]
+ [  71    0    4    0]
+ [  73    0   31    0]
+ [  22    0   13    0]]
+Epoch: [19/200], cls_loss: 0.3751, transfer_loss: 0.0175,person_loss: 0.0000, total_Loss: 0.3838
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9578660200060625 F1_MA: 0.40986161433941154 ACC_MI: 0.9578660200060625 F1_MA: 0.36350118404294474
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3068    0   17    0]
+ [  17    0   58    0]
+ [  12    0   92    0]
+ [   4    0   31    0]]
+Epoch: [20/200], cls_loss: 0.3725, transfer_loss: 0.0171,person_loss: 0.0000, total_Loss: 0.3810
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.880569869657472 F1_MA: 0.3782578859995849 ACC_MI: 0.880569869657472 F1_MA: 0.3174930181927624
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[2807    0  173  105]
+ [  13    0   60    2]
+ [   5    0   97    2]
+ [   2    0   32    1]]
+Epoch: [21/200], cls_loss: 0.3928, transfer_loss: 0.0161,person_loss: 0.0000, total_Loss: 0.4009
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9411943013034253 F1_MA: 0.35758562341626904 ACC_MI: 0.9411943013034253 F1_MA: 0.3328122711383997
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3047    0   38    0]
+ [  26    0   49    0]
+ [  46    0   58    0]
+ [  19    0   16    0]]
+Epoch: [22/200], cls_loss: 0.3701, transfer_loss: 0.0170,person_loss: 0.0000, total_Loss: 0.3787
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.06729311912700818 F1_MA: 0.24370424594128176 ACC_MI: 0.06729311912700818 F1_MA: 0.23541897225692152
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[ 121    0 2964    0]
+ [   7    0   68    0]
+ [   3    0  101    0]
+ [   2    0   33    0]]
+Epoch: [23/200], cls_loss: 0.3842, transfer_loss: 0.0171,person_loss: 0.0000, total_Loss: 0.3927
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.8438920885116702 F1_MA: 0.3552259044909999 ACC_MI: 0.8438920885116702 F1_MA: 0.29016769429665357
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[2684    0  401    0]
+ [  14    0   61    0]
+ [   4    0  100    0]
+ [   2    0   33    0]]
+Epoch: [24/200], cls_loss: 0.3622, transfer_loss: 0.0162,person_loss: 0.0000, total_Loss: 0.3703
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.6056380721430736 F1_MA: 0.33383623342059815 ACC_MI: 0.6056380721430736 F1_MA: 0.30024473354615966
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[1912    0  221  952]
+ [  15    0   56    4]
+ [  12    0   83    9]
+ [   2    0   30    3]]
+Epoch: [25/200], cls_loss: 0.3769, transfer_loss: 0.0167,person_loss: 0.0000, total_Loss: 0.3853
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.07456805092452258 F1_MA: 0.24035940814916798 ACC_MI: 0.07456805092452258 F1_MA: 0.23355656115756745
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[ 148    0 2887   50]
+ [  10    0   65    0]
+ [   4    0   98    2]
+ [   2    0   33    0]]
+Epoch: [26/200], cls_loss: 0.3727, transfer_loss: 0.0171,person_loss: 0.0000, total_Loss: 0.3813
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9521066989996969 F1_MA: 0.46143266941611255 ACC_MI: 0.9521066989996969 F1_MA: 0.45464763234589745
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3053    0   30    2]
+ [  19    0   56    0]
+ [  17    0   86    1]
+ [   6    0   27    2]]
+Epoch: [27/200], cls_loss: 0.3838, transfer_loss: 0.0161,person_loss: 0.0000, total_Loss: 0.3918
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9436192785692634 F1_MA: 0.3552366961254005 ACC_MI: 0.9436192785692634 F1_MA: 0.4034643332309896
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3085    0    0    0]
+ [  74    0    1    0]
+ [  76    0   28    0]
+ [  22    0   13    0]]
+Epoch: [28/200], cls_loss: 0.3740, transfer_loss: 0.0175,person_loss: 0.0000, total_Loss: 0.3827
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9421036677781146 F1_MA: 0.3431913967467273 ACC_MI: 0.9421036677781146 F1_MA: 0.3918401080418248
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3085    0    0    0]
+ [  72    0    3    0]
+ [  81    0   23    0]
+ [  24    0   11    0]]
+Epoch: [29/200], cls_loss: 0.3747, transfer_loss: 0.0170,person_loss: 0.0000, total_Loss: 0.3832
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9463473779933314 F1_MA: 0.37019446232909964 ACC_MI: 0.9463473779933314 F1_MA: 0.40448282952909725
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3084    0    1    0]
+ [  70    0    5    0]
+ [  66    0   38    0]
+ [  22    0   13    0]]
+Epoch: [30/200], cls_loss: 0.3649, transfer_loss: 0.0174,person_loss: 0.0000, total_Loss: 0.3737
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9530160654743862 F1_MA: 0.38048657879300707 ACC_MI: 0.9530160654743862 F1_MA: 0.36573977647955297
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3083    0    2    0]
+ [  32    0   43    0]
+ [  43    0   61    0]
+ [  17    0   18    0]]
+Epoch: [31/200], cls_loss: 0.3685, transfer_loss: 0.0178,person_loss: 0.0000, total_Loss: 0.3774
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.859654440739618 F1_MA: 0.3368084110801221 ACC_MI: 0.859654440739618 F1_MA: 0.2647168139556292
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[2803    0    0  282]
+ [  16    0    0   59]
+ [  19    0    0   85]
+ [   2    0    0   33]]
+Epoch: [32/200], cls_loss: 0.3567, transfer_loss: 0.0182,person_loss: 0.0000, total_Loss: 0.3658
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.04516520157623522 F1_MA: 0.22214325871617946 ACC_MI: 0.04516520157623522 F1_MA: 0.20051524422728587
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[  47    0 3032    6]
+ [  10    0   64    1]
+ [   2    0  102    0]
+ [   2    0   33    0]]
+Epoch: [33/200], cls_loss: 0.3465, transfer_loss: 0.0175,person_loss: 0.0000, total_Loss: 0.3552
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9496817217338588 F1_MA: 0.36350537482941736 ACC_MI: 0.9496817217338588 F1_MA: 0.34511414707597105
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3077    0    7    1]
+ [  27    0   48    0]
+ [  45    0   56    3]
+ [   8    0   27    0]]
+Epoch: [34/200], cls_loss: 0.3692, transfer_loss: 0.0173,person_loss: 0.0000, total_Loss: 0.3778
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9502879660503183 F1_MA: 0.38222824199163563 ACC_MI: 0.9502879660503183 F1_MA: 0.3637277168577073
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3071    0    8    6]
+ [  24    0   35   16]
+ [  29    0   64   11]
+ [   7    0   28    0]]
+Epoch: [35/200], cls_loss: 0.3603, transfer_loss: 0.0179,person_loss: 0.0000, total_Loss: 0.3693
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9521066989996969 F1_MA: 0.385554305227883 ACC_MI: 0.9521066989996969 F1_MA: 0.35841913582555296
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3071    0   14    0]
+ [  32    0   43    0]
+ [  34    0   70    0]
+ [   9    0   26    0]]
+Epoch: [36/200], cls_loss: 0.3532, transfer_loss: 0.0180,person_loss: 0.0000, total_Loss: 0.3622
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9487723552591695 F1_MA: 0.4388194721649378 ACC_MI: 0.9487723552591695 F1_MA: 0.5441546748258992
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3085    0    0    0]
+ [  59    0   16    0]
+ [  60    0   43    1]
+ [  14    0   19    2]]
+Epoch: [37/200], cls_loss: 0.3928, transfer_loss: 0.0180,person_loss: 0.0000, total_Loss: 0.4018
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.03849651409518036 F1_MA: 0.2267750658907661 ACC_MI: 0.03849651409518036 F1_MA: 0.2062317984214747
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[  23    0 3060    2]
+ [   5    0   70    0]
+ [   0    0  104    0]
+ [   1    0   34    0]]
+Epoch: [38/200], cls_loss: 0.3723, transfer_loss: 0.0179,person_loss: 0.0000, total_Loss: 0.3812
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9530160654743862 F1_MA: 0.38395838190405923 ACC_MI: 0.9530160654743862 F1_MA: 0.37018581649069626
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3082    0    2    1]
+ [  36    0   33    6]
+ [  41    0   62    1]
+ [  10    0   25    0]]
+Epoch: [39/200], cls_loss: 0.3688, transfer_loss: 0.0179,person_loss: 0.0000, total_Loss: 0.3777
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.17065777508335858 F1_MA: 0.3040422228931647 ACC_MI: 0.17065777508335858 F1_MA: 0.3626567850107168
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[ 472    0 2613    0]
+ [  26    0   49    0]
+ [  13    0   90    1]
+ [   3    0   31    1]]
+Epoch: [40/200], cls_loss: 0.3666, transfer_loss: 0.0181,person_loss: 0.0000, total_Loss: 0.3756
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9518035768414671 F1_MA: 0.4043663261089263 ACC_MI: 0.9518035768414671 F1_MA: 0.40320632551655106
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3077    0    8    0]
+ [  27    0   46    2]
+ [  40    0   62    2]
+ [   8    0   26    1]]
+Epoch: [41/200], cls_loss: 0.3514, transfer_loss: 0.0180,person_loss: 0.0000, total_Loss: 0.3604
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9533191876326159 F1_MA: 0.4099571859156601 ACC_MI: 0.9533191876326159 F1_MA: 0.3867441541834125
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3069    0   15    1]
+ [  29    0   44    2]
+ [  23    0   75    6]
+ [   7    0   27    1]]
+Epoch: [42/200], cls_loss: 0.3219, transfer_loss: 0.0178,person_loss: 0.0000, total_Loss: 0.3307
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9063352531070022 F1_MA: 0.38730875177817903 ACC_MI: 0.9063352531070021 F1_MA: 0.34136128776836144
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[2920    2   68   95]
+ [  13    0   39   23]
+ [   7    0   61   36]
+ [   2    0   24    9]]
+Epoch: [43/200], cls_loss: 0.3236, transfer_loss: 0.0181,person_loss: 0.0000, total_Loss: 0.3326
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9148226735374356 F1_MA: 0.37414749258376634 ACC_MI: 0.9148226735374356 F1_MA: 0.3161195039686547
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[2926    0  155    4]
+ [  15    0   57    3]
+ [  11    0   92    1]
+ [   4    0   31    0]]
+Epoch: [44/200], cls_loss: 0.3538, transfer_loss: 0.0182,person_loss: 0.0000, total_Loss: 0.3629
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9418005456198848 F1_MA: 0.33499577935624075 ACC_MI: 0.9418005456198848 F1_MA: 0.3612899775771523
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3083    0    2    0]
+ [  46    0   26    3]
+ [  77    0   23    4]
+ [  22    0   12    1]]
+Epoch: [45/200], cls_loss: 0.3449, transfer_loss: 0.0182,person_loss: 0.0000, total_Loss: 0.3540
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9396786905122765 F1_MA: 0.3603332923389292 ACC_MI: 0.9396786905122765 F1_MA: 0.34623204120357826
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3075    0    6    4]
+ [  26    0   21   28]
+ [  45    1   11   47]
+ [  16    1    4   14]]
+Epoch: [46/200], cls_loss: 0.3330, transfer_loss: 0.0186,person_loss: 0.0000, total_Loss: 0.3423
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9390724461958169 F1_MA: 0.345839662835172 ACC_MI: 0.9390724461958169 F1_MA: 0.4169177988899105
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3085    0    0    0]
+ [  71    0    0    4]
+ [  83    0   10   11]
+ [  24    0    8    3]]
+Epoch: [47/200], cls_loss: 0.3331, transfer_loss: 0.0183,person_loss: 0.0000, total_Loss: 0.3422
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9439224007274932 F1_MA: 0.48485606912744145 ACC_MI: 0.9439224007274932 F1_MA: 0.5669910239945215
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3079    1    0    5]
+ [  42   10    2   21]
+ [  37   10    8   49]
+ [  12    5    1   17]]
+Epoch: [48/200], cls_loss: 0.3337, transfer_loss: 0.0178,person_loss: 0.0000, total_Loss: 0.3426
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9421036677781146 F1_MA: 0.41089310987789956 ACC_MI: 0.9421036677781146 F1_MA: 0.37767594991364417
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3049    0   35    1]
+ [  18    0   51    6]
+ [  17    1   46   40]
+ [   4    0   18   13]]
+Epoch: [49/200], cls_loss: 0.3134, transfer_loss: 0.0182,person_loss: 0.0000, total_Loss: 0.3225
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9442255228857229 F1_MA: 0.42469909791430455 ACC_MI: 0.9442255228857229 F1_MA: 0.4936231265520369
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3082    1    2    0]
+ [  64    1    6    4]
+ [  61    7   23   13]
+ [  16    0   10    9]]
+Epoch: [50/200], cls_loss: 0.3352, transfer_loss: 0.0182,person_loss: 0.0000, total_Loss: 0.3443
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.940284934828736 F1_MA: 0.3578677725370278 ACC_MI: 0.940284934828736 F1_MA: 0.3368034436267056
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[3083    1    0    1]
+ [  50    1    3   21]
+ [  58    4    0   42]
+ [  17    0    0   18]]
+Epoch: [51/200], cls_loss: 0.3070, transfer_loss: 0.0181,person_loss: 0.0000, total_Loss: 0.3161
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.8008487420430435 F1_MA: 0.3201531263851684 ACC_MI: 0.8008487420430433 F1_MA: 0.28159676158499375
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[2601   19  427   38]
+ [  16    0   10   49]
+ [   7    3   28   66]
+ [   3    1   18   13]]
+Epoch: [52/200], cls_loss: 0.3158, transfer_loss: 0.0176,person_loss: 0.0000, total_Loss: 0.3246
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.3113064565019703 F1_MA: 0.28160042710822797 ACC_MI: 0.3113064565019703 F1_MA: 0.2831964351090575
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.5691219030617765
+[[ 979    3 2094    9]
+ [  14    0   27   34]
+ [   8    1   30   65]
+ [   2    1   14   18]]
+Epoch: [53/200], cls_loss: 0.3072, transfer_loss: 0.0182,person_loss: 0.0000, total_Loss: 0.3163
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9424067899363443 F1_MA: 0.47519152838223094 ACC_MI: 0.9424067899363443 F1_MA: 0.600215334663143
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.600215334663143
+[[3082    0    1    2]
+ [  53    3    4   15]
+ [  56    2    8   38]
+ [  19    0    0   16]]
+Epoch: [54/200], cls_loss: 0.3176, transfer_loss: 0.0180,person_loss: 0.0000, total_Loss: 0.3266
+trian begin
+trian end
+n_person 578
+SAMPLE
+F1_MI: 0.9418005456198848 F1_MA: 0.4297077634290674 ACC_MI: 0.9418005456198848 F1_MA: 0.49373384286838257
+BEST_F1_MI: 0.9578660200060625 BEST_F1_MA: 0.5107873219642565 BEST_ACC_MI: 0.9578660200060625 BEST_F1_MA: 0.600215334663143
+[[3081    0    4    0]
+ [  36    2   19   18]
+ [  62    2   10   30]
+ [  19    0    2   14]]
+Epoch: [55/200], cls_loss: 0.3280, transfer_loss: 0.0183,person_loss: 0.0000, total_Loss: 0.3372
+[[3083    0    2    0]
+ [  35    0   40    0]
+ [  34    0   68    2]
+ [   8    0   20    7]]
+[[3068    0   17    0]
+ [  17    0   58    0]
+ [  12    0   92    0]
+ [   4    0   31    0]]
+ARG: Namespace(backbone='resnet50', batch_size=32, config='DAAN/DAAN.yaml', data_dir='data', device=device(type='cuda'), early_stop=50, epoch_based_training=False, lr=0.003, lr_decay=0.75, lr_gamma=0.0003, lr_scheduler=True, max_iter=20600, method='False', momentum=0.9, myweight=0.1, n_class=4, n_epoch=200, n_iter_per_epoch=103, num_workers=3, seed=1, src_domain='45', tgt_domain='own', tname='transfer', transfer_loss='daan', transfer_loss_weight=0.5, use_bottleneck=True, weight_decay=0.0005)
